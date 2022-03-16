@@ -37,7 +37,7 @@ def word_bigram(s):
 
 s="I am an NLPer"
 
-#[BOS],[EOS]は_で表すことも
+#[BOW],[EOW]は_で表す
 print(char_bigram(s))
 print(word_bigram(s))
 
