@@ -17,7 +17,7 @@ txtpath=os.path.join(CHAP2_DIR,"popular-names.txt")
 #実際にダウンロード
 urllib.request.urlretrieve(url, txtpath)
 
-
+#プログラムを利用した解決法
 print("#####Programmable Way#####")
 with open(txtpath,"r") as f:
     #readlines()は1行ごとに分けての読み込みだから
@@ -26,8 +26,8 @@ with open(txtpath,"r") as f:
 #len(l)で行数が判るってワケ
 print("rows counted by program = \033[1m{0}\033[0m".format(len(l)))
 print()
-#print(os.getcwd())
 
+#UNIXコマンドを利用した解決法
 print("#####UNIX Command Way#####")
 
 #その後の実行コマンドを短く、見やすくするためにcdをしてそのファイル直下に移ります
