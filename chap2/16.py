@@ -17,6 +17,10 @@ txtpath=os.path.join(CHAP2_DIR,"popular-names.txt")
 ver_program=[]
 ver_unix=[]
 unix_split_suffixes=[]
+
+#splitでは[a-z]*2の26^2=676ファイルまでしか分割できない
+max_split=676
+
 for i in range(26):
     for j in range(26):
         c1=chr(ord("a")+i)
@@ -29,7 +33,7 @@ with open(txtpath,"r") as f:
 print("How many numbers of files of {0} do you want to split into ? ".format(txtpath))
 
 #標準入力により、分割数nを指定。
-n=max(1,min(int(input()),len(l)))
+n=max(1,min(int(input()),min(len(l),max_split)))
 print()
 onefile_length=ceil(len(l)/n)
 print("about {0} lines per file".format(onefile_length))
