@@ -30,7 +30,7 @@ for i in range(26):
 with open(txtpath,"r") as f:
     l=f.readlines()
 
-print("How many numbers of files of {0} do you want to split into ? ".format(txtpath))
+print("How many numbers of files of {0} do you want to split into (max {1}) ? ".format(txtpath,max_split))
 
 #標準入力により、分割数nを指定。
 n=max(1,min(int(input()),min(len(l),max_split)))
