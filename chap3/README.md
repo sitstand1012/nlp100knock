@@ -8,3 +8,6 @@
 
 ## データ保存方法の検討
 - [chap2](https://github.com/sitstand1012/nlp100knock/blob/main/chap2/README.md)と同様
+
+
+~~最後の方はやっつけになってるけど許して~~
