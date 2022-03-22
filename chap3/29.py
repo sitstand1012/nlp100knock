@@ -12,6 +12,7 @@ import shutil
 import json
 import re
 
+from PIL import Image
 import io
 from urllib.request import urlopen
 import matplotlib.pyplot as plt
