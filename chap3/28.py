@@ -170,7 +170,7 @@ with open(target_file, 'r') as f:
 england_txt=""
 for i,d in enumerate(res):
     if d[0]["title"]=="イギリス":
-    #if d[0]["title"]=="日本":      #エジプトに変えても同じようにできるはず
+    #if d[0]["title"]=="エジプト":      #エジプトに変えても同じようにできるはず
         #print(d[0])
         england_txt=d[0]["text"]
         #print(england_txt)

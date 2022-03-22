@@ -176,7 +176,7 @@ with open(target_file, 'r') as f:
 england_txt=""
 for i,d in enumerate(res):
     if d[0]["title"]=="イギリス":
-    #if d[0]["title"]=="日本":      #エジプトに変えても同じようにできるはず
+    #if d[0]["title"]=="エジプト":      #エジプトに変えても同じようにできるはず
         #print(d[0])
         england_txt=d[0]["text"]
         #print(england_txt)
@@ -251,7 +251,8 @@ url = DATA["query"]["pages"]['23473560']["imageinfo"][0]["url"]
 #print(url)
 print("the wikipedia link of {0}\'s country flag is \"{1}\"".format(countryname,url))
 
-#urlの画像を表示しようと思ったけどできなかった(今後の課題)
+#urlの画像を表示しようと思ったけどできなかった
+#問題には入ってないので今後の課題ということで
 """
 a_img = Image.open(io.BytesIO(requests.get(url).content))
 plt.figure(figsize=(20,20))
