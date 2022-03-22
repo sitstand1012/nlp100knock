@@ -1,7 +1,7 @@
 # nlp100本ノック chap2
 環境変数として次のものを利用しています
 
-- `NLP100KNOCK_CHAP2_DIR`…`popular-names.txt`を保存し、13.以降に出る`col1.txt`,`col2.txt`を保存しているディレクトリ
+- `NLP100KNOCK_CHAP2_DIR`…`popular-names.txt`を保存し、13.以降に出る`col1.txt`,`col2.txt`を保存し、その他プログラムによって出力されるデータを保存するフォルダ
 
 ## 環境変数の設定方法
 0. (設定も何もしてない人向け)ホームディレクトリに.(shellname)rcを用意する(bashなら.bashrc,zshなら.zshrc)
