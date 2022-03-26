@@ -4,13 +4,9 @@
 辞書オブジェクトとして格納せよ．
 """
 
-import urllib.request
 import os
-import gzip
-import shutil
 import json
 import re
-
 
 CHAP3_DIR=os.environ["NLP100KNOCK_CHAP3_DIR"]
 

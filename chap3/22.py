@@ -3,10 +3,8 @@
 記事のカテゴリ名を（行単位ではなく名前で）抽出せよ．
 """
 
-import urllib.request
+
 import os
-import gzip
-import shutil
 import json
 import re
 

@@ -4,17 +4,14 @@
 （ヒント: MediaWiki APIのimageinfoを呼び出して，ファイル参照をURLに変換すればよい）
 """
 
-import urllib.request
+
 import requests
 import os
-import gzip
-import shutil
 import json
 import re
 
-from PIL import Image
+from PIL import Image,ImageFile
 import io
-from urllib.request import urlopen
 import matplotlib.pyplot as plt
 
 CHAP3_DIR=os.environ["NLP100KNOCK_CHAP3_DIR"]

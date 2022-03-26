@@ -3,13 +3,9 @@
 記事から参照されているメディアファイルをすべて抜き出せ．
 """
 
-import urllib.request
 import os
-import gzip
-import shutil
 import json
 import re
-
 
 CHAP3_DIR=os.environ["NLP100KNOCK_CHAP3_DIR"]
 

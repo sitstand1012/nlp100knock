@@ -3,13 +3,9 @@
 記事中に含まれるセクション名とそのレベル（例えば”== セクション名 ==”なら1）を表示せよ．
 """
 
-import urllib.request
 import os
-import gzip
-import shutil
 import json
 import re
-
 
 CHAP3_DIR=os.environ["NLP100KNOCK_CHAP3_DIR"]
 

@@ -4,13 +4,9 @@
 （弱い強調，強調，強い強調のすべて）を除去してテキストに変換せよ（参考: マークアップ早見表）．
 """
 
-import urllib.request
 import os
-import gzip
-import shutil
 import json
 import re
-
 
 CHAP3_DIR=os.environ["NLP100KNOCK_CHAP3_DIR"]
 

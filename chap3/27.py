@@ -4,10 +4,7 @@
 テキストに変換せよ（参考: マークアップ早見表）．
 """
 
-import urllib.request
 import os
-import gzip
-import shutil
 import json
 import re
 
