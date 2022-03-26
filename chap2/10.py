@@ -4,18 +4,12 @@
 """
 
 import os
-import urllib.request
 import subprocess
 
-#タスクファイルのurl
-url="https://nlp100.github.io/data/popular-names.txt"
 
 #popular-names.txtをダウンロードするpathを指定します
 CHAP2_DIR=os.environ["NLP100KNOCK_CHAP2_DIR"]
 txtpath=os.path.join(CHAP2_DIR,"popular-names.txt")
-
-#実際にダウンロード
-urllib.request.urlretrieve(url, txtpath)
 
 #プログラムを利用した解決法
 print("#####Programmable Way#####")

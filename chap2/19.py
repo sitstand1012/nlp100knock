@@ -5,9 +5,7 @@
 """
 
 import os
-import urllib.request
 import subprocess
-from math import *
 from collections import OrderedDict
 
 CHAP2_DIR=os.environ["NLP100KNOCK_CHAP2_DIR"]

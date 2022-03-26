@@ -5,7 +5,6 @@
 """
 
 import os
-import urllib.request
 import subprocess
 from math import *
 

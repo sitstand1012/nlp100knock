@@ -5,9 +5,7 @@
 """
 
 import os
-import urllib.request
 import subprocess
-from math import *
 
 CHAP2_DIR=os.environ["NLP100KNOCK_CHAP2_DIR"]
 
@@ -31,7 +29,7 @@ print("The set of first line processed by program is below")
 print("-----------------------------")
 print(first_line_set)
 print("-----------------------------")
-input()
+#input()
 
 
 #UNIXコマンド"cut,sort,uniq"を利用した確認

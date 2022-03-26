@@ -5,7 +5,6 @@
 """
 
 import os
-import urllib.request
 import subprocess
 
 CHAP2_DIR=os.environ["NLP100KNOCK_CHAP2_DIR"]
