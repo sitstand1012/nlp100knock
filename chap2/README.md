@@ -12,4 +12,6 @@
 
 ## `popular-names.txt`の保存方法の検討
 - 一応最初の方針としては、python urllibを利用してダウンロードすることを考えていた。(レポジトリのコードではそのやり方でやってる)
+  - `preprocess.py`を実行してから他プログラムを行う
+
 - `wget -P $NLP100KNOCK_CHAP2_DIR https://nlp100.github.io/data/popular-names.txt`でpreprocessしてもできそう
