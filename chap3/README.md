@@ -7,6 +7,7 @@
 [chap2](https://github.com/sitstand1012/nlp100knock/blob/main/chap2/README.md)と同じようにやれば良い。
 
 ## データ保存方法の検討
+- `preprocess.py`を利用すると良い？
 - [chap2](https://github.com/sitstand1012/nlp100knock/blob/main/chap2/README.md)と同様
 
 
