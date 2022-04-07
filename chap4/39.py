@@ -50,12 +50,14 @@ for sent in all:
     sentlen=len(sent)
     flag=False
     for word in sent:
-        l.append(word.surface)
+        if word.pos!="記号":
+            l.append(word.surface)
 c=Counter(l).most_common()
 cnts=[]
 rank=[]
 
 for i,(w,num) in enumerate(c):
+    #enumerateを利用して、rankはi+1、カウント数はnumとなる
     rank.append(i+1)
     cnts.append(num)
 length=len(set(cnts))
@@ -68,5 +70,6 @@ plt.ylabel('counts',fontsize=18)
 ax.set_yscale('log')  # y軸をlogスケールで描く
 ax.set_xscale('log')  # x軸をlogスケールで描く
 
+#それっぽい図になった気はしなくもない
 plt.plot(rank,cnts)
 plt.show()

@@ -40,15 +40,23 @@ for sent in s:
             partial.append(Morph(line))
     all.append(partial)
 
+#surfaceを保存する。setにすると重複を消せるので便利。
 surfaceset=set()
+
+#一文ごとに考える
 for sent in all:
+    #一単語ごとに考える
     for word in sent:
+        #動詞なら
         if word.pos=="動詞":
+            #setにadd
             surfaceset.add(word.surface)
 
 surfacesetlen=len(surfaceset)
 
 maxdisp=min(7,surfacesetlen)
+
+#順不同にいくつか表示
 print("There are {0} type of verb surfaces are in this sentence.".format(surfacesetlen))
 print()
 print("We now show only {0} surfaces.".format(maxdisp))

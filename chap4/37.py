@@ -13,6 +13,9 @@ CHAP4_DIR=os.environ["NLP100KNOCK_CHAP4_DIR"]
 
 mecabpath=os.path.join(CHAP4_DIR,"neko.txt.mecab")
 
+def ordinal(i):
+    return str(i)+({1:"st",2:"nd",3:"rd"}.get(i if 14>i>10 else i % 10) or "th")
+
 class Morph:
     def __init__(self,inst):
         surface,l=inst.split("\t")
@@ -35,6 +38,7 @@ s=l.split("\n\n")
 
 all=[]
 
+#共起単語を設定
 coreword="猫"
 
 for sent in s:
@@ -50,21 +54,28 @@ for sent in all:
     flag=False
     #print(sentlen)
     for word in sent:
+        #単語として、共起単語があればflagをon
         if word.surface==coreword:
             flag=True
+    #共起単語があるので
     if flag:
+        #共起単語を含む文中の形態素全てを見る
         for word in sent:
-            w=word.surface
-            if w!=coreword:
-                l.append(w)
+            #単語ならば
+            if word.pos!="記号":
+                #原型をとり
+                w=word.base
+                #共起語自身でないことを確認する
+                if w!=coreword:
+                    l.append(w)
 
+#上位10単語
 c=Counter(l).most_common()[:10]
-#print(c)
-#input()
-print(c)
+
 print("Most 10 frequent Co-occurrence words with {0} are listed below".format(coreword))
 for i,(w,num) in enumerate(c):
-    print("{0:02d}| word:{1} count:{2}".format(i+1,w,num))
+    print("{0}: word:{1} count:{2}".format(ordinal(i+1),w,num))
+
 words=[]
 cnts=[]
 for i,(w,num) in enumerate(c):

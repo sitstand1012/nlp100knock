@@ -11,6 +11,10 @@ CHAP4_DIR=os.environ["NLP100KNOCK_CHAP4_DIR"]
 
 mecabpath=os.path.join(CHAP4_DIR,"neko.txt.mecab")
 
+#数字を序数に変える魔法
+def ordinal(i):
+    return str(i)+({1:"st",2:"nd",3:"rd"}.get(i if 14>i>10 else i % 10) or "th")
+
 class Morph:
     def __init__(self,inst):
         surface,l=inst.split("\t")
@@ -42,14 +46,14 @@ for sent in s:
     all.append(partial)
 l=[]
 for sent in all:
-    sentlen=len(sent)
-    #print(sentlen)
     for word in sent:
-        if word.pos=="名詞":
-            l.append(word.surface)
+        #記号は単語ではないのでそれ以外は単語のはず
+        if (word.pos!="記号"):
+            #単語の原型をいれましょう
+            l.append(word.base)
+
+#counterを使うとmost_common()を呼び出すだけでsortされる
 c=Counter(l).most_common()
-#print(c)
-#input()
 
 print("Sorted by frequency.")
 flag=True

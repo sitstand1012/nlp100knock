@@ -36,8 +36,6 @@ s=l.split("\n\n")
 
 all=[]
 
-coreword="猫"
-
 for sent in s:
     lin=sent.split("\n")
     partial=[]
@@ -48,21 +46,23 @@ for sent in s:
 l=[]
 
 for sent in all:
-    sentlen=len(sent)
-    flag=False
     for word in sent:
-        l.append(word.surface)
+        if word.pos!="記号":
+            l.append(word.surface)
+
+#頻度順に並べる
 c=Counter(l).most_common()
 cnts=[]
 
 for i,(w,num) in enumerate(c):
+    #それぞれの単語の出現数を格納
     cnts.append(num)
 length=len(set(cnts))
 mi=min(cnts)
 ma=max(cnts)
 
+#matplotlibマスターに俺は(ry
 fig = plt.figure()
-
 ax = fig.add_subplot(111)
 ax.set_title("Histgram of words frequency", fontsize = 16)
 plt.xlabel('counts',fontsize=18)

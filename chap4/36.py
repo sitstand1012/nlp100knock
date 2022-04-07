@@ -12,6 +12,9 @@ CHAP4_DIR=os.environ["NLP100KNOCK_CHAP4_DIR"]
 
 mecabpath=os.path.join(CHAP4_DIR,"neko.txt.mecab")
 
+def ordinal(i):
+    return str(i)+({1:"st",2:"nd",3:"rd"}.get(i if 14>i>10 else i % 10) or "th")
+
 class Morph:
     def __init__(self,inst):
         surface,l=inst.split("\t")
@@ -43,32 +46,28 @@ for sent in s:
     all.append(partial)
 l=[]
 for sent in all:
-    sentlen=len(sent)
-    #print(sentlen)
     for word in sent:
-        if word.pos=="名詞":
+        if word.pos!="記号":
             l.append(word.surface)
 c=Counter(l).most_common()[:10]
-#print(c)
-#input()
-print(c)
+
 print("Most frequent 10 words are listed below")
 for i,(w,num) in enumerate(c):
-    print("{0:02d}| word:{1} count:{2}".format(i+1,w,num))
+    print("{0}: word:{1} count:{2}".format(ordinal(i+1),w,num))
+
 words=[]
 cnts=[]
 for i,(w,num) in enumerate(c):
     words.append(w)
     cnts.append(num)
 
+#matplotlibマスターに、俺はなる！
 fig = plt.figure()
 ax = fig.add_subplot(111)
 titleword="Top 10 words frequently occur with"
 ax.set_title(titleword, fontsize = 16)
 plt.xlabel('name',fontsize=18)
 plt.ylabel('counts',fontsize=18)
-
-
 
 plt.bar(words,cnts)
 plt.show()

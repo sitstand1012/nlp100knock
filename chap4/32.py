@@ -40,14 +40,19 @@ for sent in s:
             partial.append(Morph(line))
     all.append(partial)
 
+#baseを保存する。setにすると(ry
 baseset=set()
+
 for sent in all:
     for word in sent:
+        #動詞のとき
         if word.pos=="動詞":
+            #baseをadd
             baseset.add(word.base)
 
 basesetlen=len(baseset)
 
+#順不同にいくつか表示
 maxdisp=min(7,basesetlen)
 print("There are {0} type of verb bases are in this sentence.".format(basesetlen))
 print()

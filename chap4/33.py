@@ -40,16 +40,23 @@ for sent in s:
             partial.append(Morph(line))
     all.append(partial)
 
+#「の」で連結するnoun phraseを保存する。setに(ry
 nounphraseset=set()
+
 for sent in all:
-    sentlen=len(sent)
-    #print(sentlen)
+    #3つの形態素を跨って見る必要があるため、inは使いづらいので、長さを測って愚直に見る
+    sentlen = len(sent)
     for i in range(sentlen-2):
+        #2つの名詞が「の」で連結されているなら
         if (sent[i].pos=="名詞")and(sent[i+1].surface=="の")and(sent[i+2].pos=="名詞"):
+            #setにadd
             nounphraseset.add("".join([sent[i].surface,sent[i+1].surface,sent[i+2].surface]))
 
 nounphrasesetlen=len(nounphraseset)
 maxdisp=min(7,nounphrasesetlen)
+
+
+#いくつか表示
 print("There are {0} type of noun phrase sets are in this sentence.".format(nounphrasesetlen))
 print()
 print("We now show only {0} surfaces.".format(maxdisp))

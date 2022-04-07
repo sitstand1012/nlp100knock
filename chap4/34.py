@@ -40,22 +40,31 @@ for sent in s:
             partial.append(Morph(line))
     all.append(partial)
 
+#最長一致の名詞句を保存するset。se(ry
 nounconjunctionset=set()
+
 for sent in all:
-    sentlen=len(sent)
-    #print(sentlen)
     l=[]
     for word in sent:
+        #単語が名詞のとき
         if word.pos=="名詞":
+            #要素を追加
             l.append(word.surface)
+        #名詞でないなら
         else:
+            #有効な長さがあるとき
             if len(l)>0:
+                #求める名詞句は単語を連結したもの。
                 w="".join(l)
+                #setにadd
                 nounconjunctionset.add(w)
+                #clear
                 l=[]
 
 nounconjunctionsetlen=len(nounconjunctionset)
 maxdisp=min(7,nounconjunctionsetlen)
+
+#いくつか表示
 print("There are {0} type of noun conjunction sets are in this sentence.".format(nounconjunctionsetlen))
 print()
 print("We now show only {0} surfaces.".format(maxdisp))
